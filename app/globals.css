@@ -1,26 +1,252 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #a8d3e5;
+  --foreground: #0d3158;
+  --paper: #ffffff;
+  --ink: #0b2f58;
+  --blue: #146fae;
+  --blue-soft: #49afd4;
+  --blue-bright: #1689cf;
+  --sky: #a8d3e5;
+  --sky-soft: #edf8fc;
+  --mist: #f7fcff;
+  --line: rgba(30, 95, 150, 0.2);
+  --navy: #edf8fc;
+  --navy-deep: #ffffff;
+  --navy-soft: #d8edf6;
+  --pale: #1d5d91;
+  --gold: #6faeca;
+  --gold-soft: #1e5f96;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-eb-garamond);
+  --font-serif: var(--font-cormorant);
+  --font-script: var(--font-great-vibes);
 }
 
 body {
-  background: var(--background);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(232, 247, 251, 0.76) 0, transparent 36rem),
+    radial-gradient(circle at 100% 100%, rgba(109, 171, 199, 0.46) 0, transparent 34rem),
+    linear-gradient(135deg, #9ecbdd 0%, #b8ddec 45%, #8ebfd6 100%);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-eb-garamond), Georgia, serif;
+  overflow-x: hidden;
+}
+
+.wedding-ambient-bg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(30px) saturate(1.14) contrast(1.02);
+  inset: -34px;
+  opacity: 0.72;
+  pointer-events: none;
+  position: fixed;
+  transform: scale(1.08);
+  z-index: 0;
+}
+
+.wedding-fixed-bg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: saturate(1.05) contrast(1.03);
+  inset: 0;
+  margin-inline: auto;
+  max-width: 640px;
+  pointer-events: none;
+  position: fixed;
+  z-index: 0;
+}
+
+.wedding-shell {
+  height: 100svh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+.wedding-content > section,
+.wedding-content > footer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100svh;
+  position: relative;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  text-shadow: 0 1px 16px rgba(255, 255, 255, 0.86);
+  will-change: opacity, transform, filter;
+}
+
+.wedding-content > section > *,
+.wedding-content > footer > * {
+  max-width: 28rem;
+}
+
+@supports (animation-timeline: view()) {
+  .wedding-content > section,
+  .wedding-content > footer {
+    animation: scroll-reveal both linear;
+    animation-range: entry 0% exit 100%;
+    animation-timeline: view();
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.frame-corners::before,
+.frame-corners::after {
+  border: 1px solid rgba(30, 95, 150, 0.34);
+  content: "";
+  height: 26px;
+  position: absolute;
+  width: 26px;
+}
+
+.frame-corners::before {
+  border-bottom: none;
+  border-right: none;
+  left: -1px;
+  top: -1px;
+}
+
+.frame-corners::after {
+  border-left: none;
+  border-top: none;
+  bottom: -1px;
+  right: -1px;
+}
+
+.field-control {
+  width: 100%;
+  border-radius: 0.25rem;
+  border: 1px solid rgba(30, 95, 150, 0.22);
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--ink);
+  font: inherit;
+  padding: 0.8rem 0.9rem;
+}
+
+.field-control:focus {
+  outline: 2px solid rgba(111, 174, 202, 0.65);
+  outline-offset: 2px;
+}
+
+.field-control::placeholder {
+  color: rgba(20, 52, 94, 0.48);
+}
+
+.field-control option {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.admin-control {
+  border-radius: 0.5rem;
+  border: 1px solid rgb(203 213 225);
+  color: rgb(15 23 42);
+  padding: 0.75rem 0.9rem;
+}
+
+.admin-control:focus {
+  border-color: rgb(15 23 42);
+  outline: 2px solid rgb(15 23 42 / 0.18);
+}
+
+button:not(:disabled),
+[role="button"]:not(:disabled) {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+@keyframes soft-enter {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scroll-reveal {
+  0% {
+    filter: blur(2px);
+    opacity: 0.18;
+    transform: translateY(56px) scale(0.965);
+  }
+
+  18% {
+    filter: blur(0);
+    opacity: 0.96;
+    transform: translateY(0) scale(1);
+  }
+
+  34% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  66% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  82% {
+    filter: blur(0);
+    opacity: 0.96;
+    transform: translateY(0) scale(1);
+  }
+
+  100% {
+    filter: blur(2px);
+    opacity: 0.18;
+    transform: translateY(-56px) scale(0.965);
+  }
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+.animate-soft-enter {
+  animation: soft-enter 1.2s ease both;
+}
+
+.animate-bob {
+  animation: bob 2.2s ease-in-out infinite;
 }
