@@ -51,7 +51,7 @@ export async function GET() {
   return new Response(csv, {
     headers: {
       "Content-Type": "text/csv; charset=utf-8",
-      "Content-Disposition": 'attachment; filename="invitados-boda.csv"',
+      "Content-Disposition": 'attachment; filename="invitados-xv.csv"',
       "Cache-Control": "no-store",
     },
   });

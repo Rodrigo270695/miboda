@@ -1,35 +1,43 @@
 export const wedding = {
-  couple: {
-    groom: "Rodrigo",
-    bride: "Solangel",
-    monogram: "R & S",
+  celebrant: {
+    name: "Daleska Jarubi",
+    monogram: "D",
   },
+  parents: {
+    father: "Manuel Ordóñez Chunga",
+    mother: "Analí Vilela Castro",
+  },
+  godparents: {
+    godfather: "Marquinho Yovera Vílchez",
+    godmother: "Gianella Ramos Flores",
+  },
+  shoeGodmother: "Yrma Requejo Paredes",
   event: {
-    dateLabel: "Viernes 31 de julio de 2026",
-    timeLabel: "9:00 PM",
-    isoDate: "2026-07-31T21:00:00-05:00",
-    locationName: "Local El Bambu",
-    address: "Mz. B, Lote 12",
-    mapUrl: "https://maps.app.goo.gl/vobEhSfqeddRpetu9",
+    dateLabel: "Sábado 15 de agosto de 2026",
+    timeLabel: "8:00 PM",
+    isoDate: "2026-08-15T20:00:00-05:00",
+    locationName: "El Portoncito",
+    address: "El Portoncito",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=El+Portoncito",
     dressCode: "Elegante formal",
-    rsvpDeadline: "15 de julio de 2026",
+    rsvpDeadline: "8 de agosto de 2026",
   },
   copy: {
-    eyebrow: "Nos casamos",
+    eyebrow: "Mis 15 años",
     quote:
-      "Dos caminos se volvieron uno solo el dia en que decidimos caminar juntos. Hoy, ante quienes amamos, sellamos esa promesa para toda la vida.",
+      "Como en un cuento de hadas, hoy comienza una nueva pagina de mi historia. Te invito a celebrar conmigo esta noche magica.",
     invitationIntro:
-      "Queremos celebrar este momento con las personas que han sido parte de nuestra historia.",
+      "Con la bendicion de mis padres y el amor de quienes me acompañan, celebro mis quince años.",
     confirmationNote:
       "Confirma tu invitacion con un solo toque. Al hacerlo quedara registrada tu asistencia.",
   },
   gifts: {
     title: "Mesa de regalos",
     description:
-      "Tu presencia es nuestro mejor regalo. Si deseas tener un detalle con nosotros, pronto compartiremos la informacion.",
+      "Tu presencia es el mejor regalo. Si deseas tener un detalle, sera recibido con mucho carino.",
   },
   admin: {
-    title: "Panel administrativo",
+    title: "XV · Panel admin",
     description: "Gestiona invitados, confirmaciones y asistentes.",
   },
 };

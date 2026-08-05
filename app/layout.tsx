@@ -1,35 +1,32 @@
 import type { Metadata } from "next";
-import {
-  Cormorant_Garamond,
-  EB_Garamond,
-  Great_Vibes,
-} from "next/font/google";
+import { Allura, Cinzel, Libre_Baskerville } from "next/font/google";
 import "./globals.css";
 
-const ebGaramond = EB_Garamond({
-  variable: "--font-eb-garamond",
+const libreBaskerville = Libre_Baskerville({
+  variable: "--font-libre-baskerville",
   subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
+const cinzel = Cinzel({
+  variable: "--font-cinzel",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const greatVibes = Great_Vibes({
-  variable: "--font-great-vibes",
+const allura = Allura({
+  variable: "--font-allura",
   subsets: ["latin"],
   weight: "400",
 });
 
 export const metadata: Metadata = {
-  title: "Rodrigo & Solangel — 31 de Julio 2026",
+  title: "Daleska Jarubi — Mis XV Años",
   description:
-    "Invitacion digital de boda con confirmacion de asistencia.",
+    "Invitacion digital de quinceañera con tematica de Cenicienta.",
   openGraph: {
-    title: "Rodrigo & Solangel",
-    description: "Nos casamos el 31 de julio de 2026.",
+    title: "Daleska Jarubi — Mis XV Años",
+    description: "Te invito a celebrar mis quince años el 15 de agosto de 2026.",
     type: "website",
   },
 };
@@ -43,7 +40,7 @@ export default function RootLayout({
     <html
       lang="es"
       data-scroll-behavior="smooth"
-      className={`${ebGaramond.variable} ${cormorant.variable} ${greatVibes.variable} h-full antialiased`}
+      className={`${libreBaskerville.variable} ${cinzel.variable} ${allura.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
