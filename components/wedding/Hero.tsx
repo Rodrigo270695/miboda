@@ -35,9 +35,9 @@ export function Hero({ invitedName }: { invitedName?: string }) {
         {wedding.celebrant.name}
       </h1>
       <Divider />
-      <p className="max-w-md text-lg font-semibold uppercase tracking-[0.22em] text-[var(--blue-bright)] drop-shadow-[0_2px_12px_rgba(255,255,255,0.92)]">
+      <p className="max-w-md rounded-3xl border border-[rgba(201,178,122,0.4)] bg-white/88 px-5 py-4 text-lg font-semibold uppercase tracking-[0.18em] text-[var(--blue)] shadow-[0_14px_34px_rgba(31,51,88,0.12)]">
         {wedding.event.dateLabel} ·{" "}
-        <strong className="text-[var(--blue)]">{wedding.event.timeLabel}</strong>
+        <strong className="text-[var(--ink)]">{wedding.event.timeLabel}</strong>
       </p>
       {invitedName ? (
         <div className="mt-10 max-w-md rounded-3xl border border-[rgba(201,178,122,0.45)] bg-[rgba(240,245,251,0.9)] px-7 py-6 shadow-[0_24px_60px_rgba(31,51,88,0.18)]">

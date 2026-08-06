@@ -4,7 +4,7 @@ export const wedding = {
     monogram: "D",
   },
   parents: {
-    father: "Manuel Ordóñez Chunga",
+    father: "Manuel Ordoñez Chunga",
     mother: "Analí Vilela Castro",
   },
   godparents: {
