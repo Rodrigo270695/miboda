@@ -53,8 +53,8 @@ function whatsappUrl(baseUrl: string, guest: GuestWithRsvp) {
   const message = [
     `Hola ${guest.invited_name}.`,
     "",
-    `Con mucho carino, ${wedding.celebrant.name} te invita a celebrar sus XV años, con la magia de un cuento de Cenicienta.`,
-    "Sera una noche especial junto a su familia y las personas mas queridas.",
+    `Con mucho cariño, ${wedding.celebrant.name} ${wedding.copy.whatsappInvite}`,
+    "Sera una tarde especial junto a su familia y las personas mas queridas.",
     "",
     "Por favor confirma tu invitacion en el siguiente enlace:",
     url,
@@ -319,8 +319,8 @@ function EditGuestModal({
         <section className="max-h-[calc(100dvh-2rem)] w-full max-w-xl overflow-y-auto rounded-[2rem] border border-[rgba(201,178,122,0.4)] bg-white p-5 shadow-2xl sm:p-6">
           <div className="flex items-start justify-between gap-4">
             <div>
-              <p className="font-script text-2xl leading-none text-[var(--blue)]">
-                Mis 15 años
+              <p className="font-script text-2xl leading-none text-[var(--fuchsia)]">
+                {wedding.admin.badge}
               </p>
               <h2 className="mt-2 font-serif text-2xl tracking-wide text-[var(--ink)]">
                 Editar invitado
@@ -391,7 +391,7 @@ function EditGuestModal({
               name="table_name"
               placeholder="Mesa"
             />
-            <button className="cursor-pointer rounded-xl bg-[linear-gradient(135deg,#1f3358,#4f6fa8)] px-5 py-3 text-sm font-semibold text-white transition hover:opacity-95 sm:col-span-2">
+            <button className="cursor-pointer rounded-xl bg-[linear-gradient(135deg,#c2185b,#d81b60)] px-5 py-3 text-sm font-semibold text-white transition hover:opacity-95 sm:col-span-2">
               Guardar cambios
             </button>
           </form>

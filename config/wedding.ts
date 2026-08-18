@@ -1,43 +1,86 @@
 export const wedding = {
   celebrant: {
-    name: "Daleska Jarubi",
-    monogram: "D",
+    name: "Nahia",
+    fullName: "Nahia Dariela Granja Bello",
+    monogram: "N",
   },
   parents: {
-    father: "Manuel Ordoñez Chunga",
-    mother: "Analí Vilela Castro",
+    father: "Rodrigo Granja Requejo",
+    mother: "Solangel Bello Espinoza",
   },
-  godparents: {
-    godfather: "Marquinho Yovera Vílchez",
-    godmother: "Gianella Ramos Flores",
+  siblings: {
+    brother: "Diego",
+    sister: "Ivana",
   },
-  shoeGodmother: "Yrma Requejo Paredes",
+  maternalGrandparents: {
+    grandfather: "Julio Bello Fiestas",
+    grandmother: "Maribel Espinoza Correa",
+  },
+  paternalGrandparents: {
+    grandfather: "Rodrigo Granja Maza",
+    grandmother: "Yrma Ysabel Requejo Paredes",
+  },
+  dokiFamily: [
+    {
+      name: "Doki",
+      role: "El explorador",
+      image: "/familia-doki/doki-original.png",
+    },
+    {
+      name: "Mundi",
+      role: "La viajera",
+      image: "/familia-doki/mundi.png",
+    },
+    {
+      name: "Gabi",
+      role: "La más curiosa",
+      image: "/familia-doki/gabi.png",
+    },
+    {
+      name: "Oto",
+      role: "El más sabio",
+      image: "/familia-doki/oto.png",
+    },
+    {
+      name: "Anabella",
+      role: "La artista",
+      image: "/familia-doki/anabella.png",
+    },
+    {
+      name: "Fico",
+      role: "El más divertido",
+      image: "/familia-doki/fico.png",
+    },
+  ],
   event: {
-    dateLabel: "Sábado 15 de agosto de 2026",
-    timeLabel: "8:00 PM",
-    isoDate: "2026-08-15T20:00:00-05:00",
-    locationName: "El Portoncito",
-    address: "El Portoncito",
-    mapUrl: "https://www.google.com/maps/search/?api=1&query=El+Portoncito",
-    dressCode: "Elegante formal",
-    rsvpDeadline: "8 de agosto de 2026",
+    dateLabel: "22 de agosto de 2026",
+    timeLabel: "02:00 PM",
+    isoDate: "2026-08-22T14:00:00-05:00",
+    locationName: "Av. Aviación S/N — Saltur",
+    address: "Av. Aviación S/N - Saltur",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Av.+Aviacion+S/N+Saltur",
+    dressCode: "Casual, comoda y con mucho color",
+    rsvpDeadline: "el 15 de agosto de 2026",
   },
   copy: {
-    eyebrow: "Mis 15 años",
+    eyebrow: "Mi 1er añito",
     quote:
-      "Como en un cuento de hadas, hoy comienza una nueva pagina de mi historia. Te invito a celebrar conmigo esta noche magica.",
+      "Un año de amor, risas y huellitas en el corazón. Celebra con nosotros el primer añito de nuestra princesa.",
     invitationIntro:
-      "Con la bendicion de mis padres y el amor de quienes me acompañan, celebro mis quince años.",
+      "Con la bendicion de sus padres y el cariño de sus abuelos, celebramos el primer año de Nahia Dariela.",
     confirmationNote:
       "Confirma tu invitacion con un solo toque. Al hacerlo quedara registrada tu asistencia.",
+    whatsappInvite:
+      "te invita a celebrar su primer añito, con la alegria de Oki Doki y su familia exploradora.",
   },
   gifts: {
     title: "Mesa de regalos",
     description:
-      "Tu presencia es el mejor regalo. Si deseas tener un detalle, sera recibido con mucho carino.",
+      "Tu presencia es el mejor regalo. Si deseas tener un detalle para Nahia, sera recibido con mucho carino.",
   },
   admin: {
-    title: "XV · Panel admin",
+    title: "1 añito · Panel admin",
+    badge: "Mi 1er añito",
     description: "Gestiona invitados, confirmaciones y asistentes.",
   },
 };

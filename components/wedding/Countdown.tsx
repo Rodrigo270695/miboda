@@ -35,8 +35,8 @@ function calculateCountdown(targetDate: string): CountdownValue {
 
 function CountdownItem({ label, value }: { label: string; value: number }) {
   return (
-    <div className="min-w-20 rounded-2xl border border-[var(--line)] bg-white/80 px-3.5 py-4 shadow-[0_12px_30px_rgba(30,95,150,0.08)]">
-      <div className="font-serif text-5xl leading-none text-[var(--blue)]">
+    <div className="min-w-20 rounded-2xl border border-[var(--line)] bg-white/80 px-3.5 py-4 shadow-[0_12px_30px_rgba(216,27,96,0.08)]">
+      <div className="font-serif text-5xl leading-none text-[var(--fuchsia)]">
         {String(value).padStart(2, "0")}
       </div>
       <div className="mt-2 text-xs uppercase tracking-[0.18em] text-[var(--pale)]">
@@ -76,7 +76,7 @@ export function Countdown({ targetDate }: { targetDate: string }) {
 
   if (countdown.finished) {
     return (
-      <div className="rounded-2xl border border-[var(--line)] bg-white/80 px-8 py-5 font-serif text-2xl text-[var(--blue)]">
+      <div className="rounded-2xl border border-[var(--line)] bg-white/80 px-8 py-5 font-serif text-2xl text-[var(--fuchsia)]">
         Hoy es el gran dia
       </div>
     );

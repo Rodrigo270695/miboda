@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { wedding } from "@/config/wedding";
 import { Countdown } from "@/components/wedding/Countdown";
 import { Divider } from "@/components/wedding/Divider";
+import { DokiFamily } from "@/components/wedding/DokiFamily";
 import { EventDetails } from "@/components/wedding/EventDetails";
 import { FloralFrame } from "@/components/wedding/FloralFrame";
 import { Hero } from "@/components/wedding/Hero";
@@ -10,8 +11,20 @@ import { SectionTitle } from "@/components/wedding/SectionTitle";
 
 function ContentPanel({ children }: { children: ReactNode }) {
   return (
-    <div className="w-full rounded-3xl border border-[rgba(201,178,122,0.4)] bg-white/88 px-5 py-7 shadow-[0_18px_45px_rgba(31,51,88,0.12)]">
+    <div className="w-full rounded-3xl border border-[rgba(212,175,55,0.4)] bg-white/88 px-5 py-7 shadow-[0_18px_45px_rgba(90,33,69,0.12)]">
       {children}
+    </div>
+  );
+}
+
+function FamilyNames({ names }: { names: string[] }) {
+  return (
+    <div className="grid gap-5">
+      {names.map((name) => (
+        <p key={name} className="font-serif text-3xl tracking-wide text-[var(--ink)]">
+          {name}
+        </p>
+      ))}
     </div>
   );
 }
@@ -35,7 +48,7 @@ export function WeddingPage({
               <p className="mx-auto max-w-sm font-serif text-2xl font-medium italic leading-relaxed tracking-wide text-[var(--ink)]">
                 &quot;{wedding.copy.quote}&quot;
               </p>
-              <p className="mt-6 font-script text-4xl text-[var(--blue)]">
+              <p className="mt-6 font-script text-4xl text-[var(--fuchsia)]">
                 {wedding.celebrant.name}
               </p>
             </ContentPanel>
@@ -43,58 +56,70 @@ export function WeddingPage({
 
           <section className="px-10 py-16 text-center">
             <ContentPanel>
-              <SectionTitle subtitle="Con mucho cariño">Mis padres</SectionTitle>
-              <div className="grid gap-5">
-                <p className="font-serif text-3xl tracking-wide text-[var(--ink)]">
-                  {wedding.parents.father}
-                </p>
-                <p className="font-serif text-3xl tracking-wide text-[var(--ink)]">
-                  {wedding.parents.mother}
-                </p>
-              </div>
+              <SectionTitle subtitle="Con todo nuestro amor">Mis papás</SectionTitle>
+              <FamilyNames
+                names={[wedding.parents.father, wedding.parents.mother]}
+              />
+            </ContentPanel>
+          </section>
+
+          <section className="px-10 py-16 text-center">
+            <ContentPanel>
+              <SectionTitle subtitle="Mis cómplices de aventuras">
+                Mis hermanos
+              </SectionTitle>
+              <FamilyNames
+                names={[wedding.siblings.brother, wedding.siblings.sister]}
+              />
             </ContentPanel>
           </section>
 
           <section className="px-10 py-16 text-center">
             <ContentPanel>
               <SectionTitle subtitle="Acompañándome en este día">
-                Padrinos
+                Mis abuelos
               </SectionTitle>
-              <div className="grid gap-6">
+              <div className="grid gap-8">
                 <div>
-                  <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[var(--blue)]">
-                    Padrino
+                  <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[var(--fuchsia)]">
+                    Abuelos maternos
                   </p>
-                  <p className="mt-2 font-serif text-2xl tracking-wide text-[var(--ink)]">
-                    {wedding.godparents.godfather}
-                  </p>
+                  <div className="mt-4">
+                    <FamilyNames
+                      names={[
+                        wedding.maternalGrandparents.grandfather,
+                        wedding.maternalGrandparents.grandmother,
+                      ]}
+                    />
+                  </div>
                 </div>
-                <div>
-                  <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[var(--blue)]">
-                    Madrina
-                  </p>
-                  <p className="mt-2 font-serif text-2xl tracking-wide text-[var(--ink)]">
-                    {wedding.godparents.godmother}
-                  </p>
-                </div>
-                <div className="rounded-3xl border border-[rgba(201,178,122,0.45)] bg-[rgba(240,245,251,0.95)] px-5 py-6">
+                <div className="rounded-3xl border border-[rgba(212,175,55,0.45)] bg-[rgba(255,245,248,0.95)] px-5 py-6">
                   <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--gold-soft)]">
-                    Madrina de cambio de zapatos
+                    Abuelos paternos
                   </p>
-                  <p className="mt-2 font-serif text-2xl tracking-wide text-[var(--ink)]">
-                    {wedding.shoeGodmother}
-                  </p>
+                  <div className="mt-4">
+                    <FamilyNames
+                      names={[
+                        wedding.paternalGrandparents.grandfather,
+                        wedding.paternalGrandparents.grandmother,
+                      ]}
+                    />
+                  </div>
                 </div>
               </div>
             </ContentPanel>
           </section>
 
-          <section className="px-10 py-16 text-center">
-            <ContentPanel>
-              <SectionTitle subtitle="Faltan solo...">Cuenta regresiva</SectionTitle>
-              <Countdown targetDate={wedding.event.isoDate} />
-            </ContentPanel>
-          </section>
+          <DokiFamily />
+
+          {wedding.event.isoDate ? (
+            <section className="px-10 py-16 text-center">
+              <ContentPanel>
+                <SectionTitle subtitle="Faltan solo...">Cuenta regresiva</SectionTitle>
+                <Countdown targetDate={wedding.event.isoDate} />
+              </ContentPanel>
+            </section>
+          ) : null}
 
           <EventDetails />
 
@@ -104,8 +129,8 @@ export function WeddingPage({
             <ContentPanel>
               <Divider />
               <Monogram size="small" />
-              <div className="mt-3 text-base font-semibold uppercase tracking-[0.28em] text-[var(--blue)]">
-                15 · 08 · 2026
+              <div className="mt-3 text-base font-semibold uppercase tracking-[0.28em] text-[var(--fuchsia)]">
+                22 · 08 · 2026
               </div>
             </ContentPanel>
           </footer>

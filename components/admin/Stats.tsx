@@ -14,7 +14,7 @@ export function StatCard({
     blue: "border-[rgba(143,168,212,0.45)] bg-[rgba(240,245,251,0.95)] text-[var(--ink)] ring-[rgba(143,168,212,0.35)]",
     green: "border-emerald-100 bg-emerald-50/90 text-emerald-950 ring-emerald-100",
     amber: "border-amber-100 bg-amber-50/90 text-amber-950 ring-amber-100",
-    slate: "border-[rgba(31,51,88,0.35)] bg-[linear-gradient(135deg,#1f3358,#4f6fa8)] text-white ring-[rgba(79,111,168,0.45)]",
+    slate: "border-[rgba(194,24,91,0.35)] bg-[linear-gradient(135deg,#c2185b,#d81b60)] text-white ring-[rgba(216,27,96,0.45)]",
   }[tone];
   const dotClassName = {
     default: "bg-[var(--gold)]",

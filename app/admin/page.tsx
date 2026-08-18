@@ -36,7 +36,7 @@ export default async function AdminPage({
     "http://localhost:3000";
 
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_8%_0%,rgba(184,168,212,0.22),transparent_30%),radial-gradient(circle_at_92%_8%,rgba(201,178,122,0.16),transparent_26%),linear-gradient(180deg,#f7f9fc_0%,#eef3fa_46%,#e6eef8_100%)] text-[var(--ink)]">
+    <main className="min-h-screen bg-[radial-gradient(circle_at_8%_0%,rgba(244,143,177,0.22),transparent_30%),radial-gradient(circle_at_92%_8%,rgba(212,175,55,0.16),transparent_26%),linear-gradient(180deg,#fffafc_0%,#fff5f8_46%,#fce4ec_100%)] text-[var(--ink)]">
       <header className="border-b border-[rgba(201,178,122,0.25)] bg-white/80 shadow-[0_12px_34px_rgba(31,51,88,0.05)] backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl flex-col gap-5 px-4 py-6 sm:px-6 lg:flex-row lg:items-center lg:justify-between">
           <div className="min-w-0">
@@ -45,7 +45,7 @@ export default async function AdminPage({
                 {wedding.admin.title}
               </span>
               <span className="inline-flex rounded-full bg-white px-3 py-1 font-script text-lg leading-none text-[var(--blue)] ring-1 ring-[rgba(143,168,212,0.45)]">
-                Mis 15 años
+                {wedding.admin.badge}
               </span>
               <span className="inline-flex rounded-full bg-white px-3 py-1 text-xs font-semibold text-[var(--pale)] ring-1 ring-[rgba(143,168,212,0.35)]">
                 Envio WhatsApp {sendProgress}%
@@ -65,7 +65,7 @@ export default async function AdminPage({
           <div className="grid gap-3 lg:justify-items-end">
             <AdminControls />
             <form action={logoutAdmin} className="lg:justify-self-end">
-              <button className="w-full cursor-pointer rounded-2xl bg-[linear-gradient(135deg,#1f3358,#4f6fa8)] px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-[rgba(31,51,88,0.18)] transition hover:-translate-y-0.5 sm:w-auto">
+              <button className="w-full cursor-pointer rounded-2xl bg-[linear-gradient(135deg,#c2185b,#d81b60)] px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-[rgba(216,27,96,0.18)] transition hover:-translate-y-0.5 sm:w-auto">
                 Salir
               </button>
             </form>

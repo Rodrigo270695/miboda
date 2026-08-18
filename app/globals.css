@@ -1,42 +1,44 @@
 @import "tailwindcss";
 
 :root {
-  --background: #c5d8ef;
-  --foreground: #243a5e;
+  --background: #fff4f8;
+  --foreground: #6b2048;
   --paper: #ffffff;
-  --ink: #1f3358;
-  --blue: #4f6fa8;
-  --blue-soft: #8fa8d4;
-  --blue-bright: #6b8fc4;
-  --sky: #c5d8ef;
-  --sky-soft: #f0f5fb;
-  --mist: #f7f9fc;
-  --line: rgba(79, 111, 168, 0.22);
-  --navy: #f0f5fb;
+  --ink: #5a2145;
+  --blue: #d81b60;
+  --blue-soft: #f48fb1;
+  --blue-bright: #ec407a;
+  --sky: #fce4ec;
+  --sky-soft: #fff5f8;
+  --mist: #fffafc;
+  --line: rgba(216, 27, 96, 0.18);
+  --navy: #fff0f5;
   --navy-deep: #ffffff;
-  --navy-soft: #dce6f4;
-  --pale: #3d5278;
-  --gold: #c9b27a;
-  --gold-soft: #a8905c;
-  --silver: #c8d0dc;
-  --lavender: #b8a8d4;
+  --navy-soft: #f8bbd0;
+  --pale: #8d4a6a;
+  --gold: #d4af37;
+  --gold-soft: #c5a028;
+  --silver: #f5d0e0;
+  --lavender: #f8bbd0;
+  --pink: #f48fb1;
+  --fuchsia: #d81b60;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-libre-baskerville);
-  --font-serif: var(--font-cinzel);
-  --font-script: var(--font-allura);
+  --font-sans: var(--font-nunito);
+  --font-serif: var(--font-fredoka);
+  --font-script: var(--font-pacifico);
 }
 
 body {
   background:
-    radial-gradient(circle at 0% 0%, rgba(240, 245, 251, 0.9) 0, transparent 36rem),
-    radial-gradient(circle at 100% 100%, rgba(184, 168, 212, 0.35) 0, transparent 34rem),
-    linear-gradient(135deg, #b7cce8 0%, #d4dff0 45%, #a8bddc 100%);
+    radial-gradient(circle at 0% 0%, rgba(255, 245, 248, 0.95) 0, transparent 36rem),
+    radial-gradient(circle at 100% 100%, rgba(244, 143, 177, 0.28) 0, transparent 34rem),
+    linear-gradient(135deg, #f8bbd0 0%, #fff7fb 45%, #fce4ec 100%);
   color: var(--foreground);
-  font-family: var(--font-libre-baskerville), Georgia, serif;
+  font-family: var(--font-nunito), "Segoe UI", sans-serif;
   overflow-x: hidden;
 }
 
@@ -127,7 +129,7 @@ html {
 
 .frame-corners::before,
 .frame-corners::after {
-  border: 1px solid rgba(201, 178, 122, 0.55);
+  border: 1px solid rgba(212, 175, 55, 0.55);
   content: "";
   height: 26px;
   position: absolute;
@@ -150,21 +152,21 @@ html {
 
 .field-control {
   width: 100%;
-  border-radius: 0.25rem;
-  border: 1px solid rgba(79, 111, 168, 0.24);
-  background: rgba(255, 255, 255, 0.82);
+  border-radius: 0.85rem;
+  border: 1px solid rgba(216, 27, 96, 0.2);
+  background: rgba(255, 255, 255, 0.88);
   color: var(--ink);
   font: inherit;
   padding: 0.8rem 0.9rem;
 }
 
 .field-control:focus {
-  outline: 2px solid rgba(143, 168, 212, 0.7);
+  outline: 2px solid rgba(244, 143, 177, 0.7);
   outline-offset: 2px;
 }
 
 .field-control::placeholder {
-  color: rgba(61, 82, 120, 0.5);
+  color: rgba(141, 74, 106, 0.5);
 }
 
 .field-control option {
@@ -174,15 +176,15 @@ html {
 
 .admin-control {
   border-radius: 0.85rem;
-  border: 1px solid rgba(143, 168, 212, 0.45);
+  border: 1px solid rgba(244, 143, 177, 0.5);
   background: rgba(255, 255, 255, 0.92);
   color: var(--ink);
   padding: 0.75rem 0.9rem;
 }
 
 .admin-control:focus {
-  border-color: var(--blue);
-  outline: 2px solid rgba(79, 111, 168, 0.18);
+  border-color: var(--fuchsia);
+  outline: 2px solid rgba(216, 27, 96, 0.16);
 }
 
 button:not(:disabled),

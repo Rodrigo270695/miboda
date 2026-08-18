@@ -1,32 +1,33 @@
 import type { Metadata } from "next";
-import { Allura, Cinzel, Libre_Baskerville } from "next/font/google";
+import { Fredoka, Nunito, Pacifico } from "next/font/google";
 import "./globals.css";
 
-const libreBaskerville = Libre_Baskerville({
-  variable: "--font-libre-baskerville",
+const nunito = Nunito({
+  variable: "--font-nunito",
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "600", "700", "800"],
 });
 
-const cinzel = Cinzel({
-  variable: "--font-cinzel",
+const fredoka = Fredoka({
+  variable: "--font-fredoka",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
-const allura = Allura({
-  variable: "--font-allura",
+const pacifico = Pacifico({
+  variable: "--font-pacifico",
   subsets: ["latin"],
   weight: "400",
 });
 
 export const metadata: Metadata = {
-  title: "Daleska Jarubi — Mis XV Años",
+  title: "Nahia Dariela — Mi 1er añito",
   description:
-    "Invitacion digital de quinceañera con tematica de Cenicienta.",
+    "Invitacion digital del primer añito de Nahia Dariela, con tematica de Oki Doki.",
   openGraph: {
-    title: "Daleska Jarubi — Mis XV Años",
-    description: "Te invito a celebrar mis quince años el 15 de agosto de 2026.",
+    title: "Nahia Dariela — Mi 1er añito",
+    description:
+      "Celebra con nosotros el primer añito de Nahia Dariela Granja Bello.",
     type: "website",
   },
 };
@@ -40,7 +41,7 @@ export default function RootLayout({
     <html
       lang="es"
       data-scroll-behavior="smooth"
-      className={`${libreBaskerville.variable} ${cinzel.variable} ${allura.variable} h-full antialiased`}
+      className={`${nunito.variable} ${fredoka.variable} ${pacifico.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
